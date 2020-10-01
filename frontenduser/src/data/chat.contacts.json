@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "name": "Sarah Kortney",
+            "thumb": "/static/assets/img/profile-pic-l.jpg",
+            "lastSeenDate":"0"
+        },
+        {
+            "id": 1,
+            "name": "Linn Ronning",
+            "thumb": "/static/assets/img/profile-pic-l-4.jpg",
+            "lastSeenDate":"Last seen today 15:24"
+        },
+        {
+            "id": 2,
+            "name": "Goldie Mossman",
+            "thumb": "/static/assets/img/profile-pic-l-3.jpg",
+            "lastSeenDate":"Last seen today 13:24"
+        }
+    ]
+}

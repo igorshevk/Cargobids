@@ -1,0 +1,198 @@
+/*
+ Default:  #1840bb;
+ */
+
+h2,
+a:focus {
+  color: #1840bb;
+}
+
+.button,
+.center-wrap button button {
+  border: 1px solid #1840bb;
+  background-color: #1840bb !important;
+}
+
+.plan .button:hover {
+  border-color: #1840bb;
+}
+
+.plan .button a,
+.glyph i {
+  color: #0990df;
+}
+
+.plan.featured .button {
+  background-color: #1840bb;
+}
+
+.social-icons ul li a:hover {
+  background-color: #1840bb;
+}
+
+.navbar-light .navbar-nav > .nav-item:hover,
+.navbar-light .navbar-nav > .nav-item:active {
+  background-color: #049ff8;
+}
+
+.owl-thumb-item i {
+  color: #1840bb;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  background-color: #049ff8 !important;
+}
+
+.navbar-light.fixed-top,
+.search-modal,
+.home-video-area::before,
+.owl-thumb-item.active,
+.owl-thumb-item:hover {
+  background-color: #1840bb;
+}
+
+.navbar-light.menu-shrink {
+  background-color: #1840bb !important;
+}
+
+.filter-menu button.programs-filter-btn-active,
+.filter-menu button:hover {
+  background-color: #1840bb;
+}
+
+.work-details .icon li span,
+.team-box .title,
+.team-box .icon li a,
+.team-slides .owl-nav div {
+  color: #1840bb !important;
+}
+
+.team-box .icon li a:hover {
+  background: #1840bb;
+}
+
+.date-box {
+  background-color: #1840bb;
+}
+
+.blog-item:hover .title-meta h2 a {
+  color: #1840bb;
+}
+
+.post-meta ul li a:hover {
+  color: #1840bb;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: #1840bb;
+  border-color: #1840bb;
+}
+
+.side-widget h3::before {
+  background: #1840bb;
+}
+
+.search-form .btn-default {
+  border-color: #1840bb;
+  background: #1840bb;
+}
+
+.side-widget .list-group li a:hover {
+  color: #1840bb;
+}
+
+.single-post h4 a:hover {
+  color: #1840bb;
+}
+
+.list-tags li a:hover {
+  background-color: #1840bb;
+}
+
+.sharing-link ul li i:hover {
+  background-color: #1840bb;
+}
+
+.content-box:hover .box-icon-effect-1a .box-icon i {
+  color: #1840bb;
+}
+
+.work-details .box-content {
+  background: #1840bb;
+}
+
+.comments-title::before {
+  background: #1840bb;
+}
+
+.single-comment .reply:hover {
+  background-color: #1840bb;
+}
+
+.video-area:before {
+  /* background:  #1840bb; */
+}
+
+.plus,
+.post-meta ul li .fa {
+  color: #1840bb;
+}
+
+.plus:hover {
+  color: #1840bb;
+}
+
+.tab-menu ul li.active a {
+  background-color: #1840bb;
+}
+
+.plan.featured .listing-badges .featured {
+  color: #1840bb;
+}
+
+.plan.featured .plan-price,
+.content-box.color-effect-1,
+.footer {
+  background-color: #1840bb;
+}
+
+.single-testimonial-item i,
+.partners-slides .owl-nav div {
+  color: #1840bb !important;
+}
+
+.client-info h3,
+.testimonial-slides .owl-nav div {
+  color: #1840bb !important;
+}
+
+.panel-title a:before,
+.panel-title a.collapsed:before {
+  color: #1840bb;
+  border: 1px solid #1840bb;
+}
+
+.social-icons.bottom ul li a {
+  background-color: #049ff8;
+}
+
+.social-icons.bottom ul li a:hover {
+  color: #049ff8;
+}
+
+.about-info i {
+  color: #049ff8;
+}
+
+.about-info:hover {
+  background-color: #1840bb;
+}
+
+.plan .btn-a {
+  color: #1840bb;
+}

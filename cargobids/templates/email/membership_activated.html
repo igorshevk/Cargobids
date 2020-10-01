@@ -1,0 +1,13 @@
+{% extends "email/base_generic.html" %} {% block content %}
+<p>Gentile {{ name }} !</p>
+<p>
+  Siamo lieti confermarti che la procedura di sottoscrizione al piano tariffario
+  {{data.membership.name}} é stata completata. Ora puoi accedere a tutte le
+  funzioni previste nel piano sottoscritto, fino al
+  {{data.current_period_end|date:"d-m-Y"}}. Effettua il Login mediante il
+  seguente link:
+</p>
+<p>
+  <a href="{{ btn_link }}" class="btn">{{btn_label}}</a>
+</p>
+{% endblock %}

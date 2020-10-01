@@ -1,0 +1,20 @@
+{% extends "email/base_generic.html" %}
+
+{% block content %}
+    <p>
+        Benvenuto {{ name }} !
+    </p>
+    <p>
+
+        Siamo lieti di informarti che la tua richiesta di registrazione é stata approvata.<br/>
+        Da oggi potrai accedere al sito mediante le credenziali fornite in fase di registrazione, e sottoscrivere uno dei piani tariffari previsti per utilizzare tutte le funzioni riservate ai membri di CargoBids.<br/>
+        Ti auguriamo una buona navigazione!
+    </p>
+
+    </p>
+        Il Team di CargoBIds
+    </p>
+    <p>
+        <a href='{{ url }}' class="btn">{{btn_label}}</a>
+    </p>
+{% endblock %}

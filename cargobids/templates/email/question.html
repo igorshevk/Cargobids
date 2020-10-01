@@ -1,0 +1,21 @@
+{% extends "email/base_generic.html" %}
+
+{% block content %}
+ <!-- Body content -->
+                                <tr>
+                                    <td class="content-cell" style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; padding: 35px;">
+                                        <p>
+                                            {{ content1 }}
+                                        </p>
+                                        <p>
+                                            {{ content2 }} <br />
+                                            <h4 "style=color:red">{{ question }}</h4>
+                                        </p>
+                                        <p>
+                                            {{ content3 }}
+                                        </p>
+                                        <p>
+                                            <a href='{{ link }}' class="btn">Reply</a>
+                                        </p>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "email/base_generic.html" %} {% block content %}
+<p>
+  L' Utente {{ name }}ha inviato un bonifico bancario per il piano tariffario
+  {{data.interval_count}} {{data.interval}} {{ data.membership.name}}.
+</p>
+<p>
+  <a href="{{ btn_link }}" class="btn">{{btn_label}}</a>
+</p>
+{% endblock %}

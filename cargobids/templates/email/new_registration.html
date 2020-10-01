@@ -1,0 +1,184 @@
+{% extends "email/base_generic.html" %}
+
+{% block content %}
+ 	<style>
+        /* A simple css reset */
+        body,table,thead,tbody,tr,td,img {
+            padding: 0;
+            margin: 0;
+            border: none;
+            border-spacing: 0px;
+            border-collapse: collapse;
+            vertical-align: top;
+        }
+
+        /* Add some padding for small screens */
+        .wrapper {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        h1,h2,h3,h4,h5,h6,p {
+            margin: 0;
+            padding: 0;
+            padding-bottom: 20px;
+            line-height: 1.6;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+
+        p,a,li {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+
+         .company-info-table th, .company-info-table td {padding: 5px 5px; border: 1px solid black;}
+
+        @media only screen and (max-width: 620px) {
+
+            .wrapper .section {
+                width: 100%;
+            }
+
+            .wrapper .column {
+                width: 100%;
+                display: block;
+            }
+        }
+    </style>
+    <p>
+    	{{content}}
+    </p>
+     <table width="100%" class="company-info-table"  style="border:1px solid #ccc;">
+        <tbody>
+            <tr>
+                <td class="wrapper" width="600" align="center">
+                    <!-- Two columns -->
+                    <table class="section" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                Name
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.firstname}} {{data.lastname}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                Email
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.email}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                Company Name
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.companyname}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                branch
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.branch}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                Address
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.address}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                Address 2
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.address2}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                Zip
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.zip_code}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                City
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.city}}
+                            </td>
+                        </tr>
+                        {% if data.user_type == 'Agent' %}
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                Iata
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.iata}}
+                            </td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                CF
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.cf}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                Pec
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.pec}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                Sdi
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.sdi}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column" width="290" valign="top">
+                                Partita Iva
+                            </td>
+                           
+                            <td class="column" width="290" valign="top">
+                                {{data.p_iva}}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p> 
+    	<br/>
+        <a href='{{ url }}' class="btn">Check Now</a>
+    </p>
+{% endblock %}

@@ -1,0 +1,4 @@
+REACT_APP_API_URL=http://localhost:8000
+REACT_APP_URL_USER=http://localhost:3000
+REACT_APP_URL_ADMIN=http://localhost:3001
+REACT_APP_AUTH_TOKEN=cargobid-auth

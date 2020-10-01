@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "[Tx Neon (Yellow)]": {},
+      "activityBar.background": "#263020",
+      "titleBar.activeBackground": "#35442D",
+      "titleBar.activeForeground": "#F9FBF8"
+    }
+  }
+}

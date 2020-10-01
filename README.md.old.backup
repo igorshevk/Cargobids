@@ -1,0 +1,64 @@
+# Getting Started
+
+## Python Library Requirements
+To ensure the correct python libraries are setup for this project setup a python virtual environment and activate it.
+
+For this project i have used `python 3`, and you would need pipenv to install the requirements.
+
+To install `pipenv` globally use the following command
+
+```
+sudo pip3 install pipenv
+```
+
+Then run from the root directory run the following command
+```
+pipenv install
+```
+
+This will install all libraries required by this project.
+
+##Database
+#### msqlclient :
+When trying to perform `runserver` command, you will face error for mysqldb or mysqlclient.
+
+To install mysql client you can use the following commands, usually in most systems this following command will give error.
+######`Do not Copy "$" when copying commpands. It is just representation that this is a standalone command`
+```
+$ sudo apt-get install libmysqlclient-dev
+
+$ pip install mysqlclient
+```
+
+If the above commands gave error, then you can go to the following url, and download the suitable mysqlclient for your machine.
+
+```
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient
+```
+
+Such as I have python 3.6, so for me i have downloaded the `.whl` file and used this following command from inside my virtualenv
+
+```
+pip install mysqlclient-1.4.6-cp36-cp36m-win_amd64.whl
+```
+
+
+#### Migrations :
+You can use the following commands to make and run migrations
+
+
+```
+$ python manage.py makemigrations
+
+$ python manage.py migrate
+```
+
+
+
+
+## .env setup
+I have used the following package for .env
+I have kept `.env.example` in under `cargobids/cargobids/` directory, modify it according to your environment and rename it to .env
+```
+https://github.com/theskumar/python-dotenv
+```

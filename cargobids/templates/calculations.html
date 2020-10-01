@@ -1,0 +1,207 @@
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+{% block style %}
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body{
+background: url("")no-repeat center center fixed;
+background-size: 100% 100%;
+-webkit-background-size cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+-moz background-size: cover;
+color: #1e43da;
+
+}
+
+</style>
+
+
+
+{% endblock %}
+{% block content %}
+
+<div id="main_div" class="well col-md-12 ">
+  <div class="container ">
+   <div class="row col-lg-12 wrapper_new">
+    <h1 style ='text-align: center; color:white'>Calcola Volume e Chargeable Weight</h1>
+    <br>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" style ='text-align: center; color:white '; class="col-sm-1 control-label">Tot. Colli</label>
+      <div class="col-sm-3">
+        <input type="text" style= "text-align:center" class="form-control" id="boxes" placeholder="Colli">
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+      <label for="inputPassword" style ='text-align: center; color:white '; class="col-sm-1 control-label">Kgs</label>
+      <div class="col-sm-3">
+        <input type="text" style= "text-align:center" class="form-control" id="kgs" placeholder="Kgs">
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+  <hr>
+
+
+  <table id="cubic_table" class="table1">
+    <tr>
+      <th>Colli</th>
+      <th>L</th>
+      <th>W</th>
+      <th>H</th>
+      <th>CBM</th>
+      <th>Aggiungi colli</th>
+    </tr>
+    <tr class="table_0">
+      <td><input type="text" style= "text-align:center" class="form-control table_0" placeholder="" value="0"></td>
+      <td><input type="text" style= "text-align:center" class="form-control table_0" placeholder="" value="0"></td>
+      <td><input type="text"  style= "text-align:center" class="form-control table_0" placeholder="" value="0"></td>
+      <td><input type="text" style= "text-align:center"  class="form-control table_0" placeholder="" value="0"></td>
+      <td class="table_0">0</td>
+      <td>
+        <button type="button" id="add_tr" class="btn btn-success">+</button>
+        <button type="button" id="remove_tr" class="btn btn-danger">-</button>
+      </td>
+    </tr>
+  </table>
+
+  <h2 style= "text-align:center" id="big_total"><b>Totale Volume: </b></h2>
+  <h2 style= "text-align:center; color:red" id="chargeable"><b>Chargeable Wt: </b></h2>
+  <br>
+  <div class="row">
+    <div class="col-sm-5"><button type="button" onclick="resetAllValues()" class="btn btn-danger">Clear fields</button></div>
+    <div class="col-sm-5 "><button type="button" onclick="generateOutput()" class="btn btn-primary">Generate Output</button></div>
+    <div class="col-sm-2"></div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <div> <button class="btn btn-success" id="copy_tbl" style="display:none;" onclick="SelectContent();">Copy Table</button> </div>
+  <div id="output"> </div>
+
+</div>
+{% endblock %}
+{% block footer %}
+<script>
+    function resetAllValues() {
+        $('#main_div').find('input:text').val('');
+        for(var i=new_counter; i>1; i--){
+            var class_name = ".table_" + (new_counter - 1);
+            $( class_name ).remove()
+            new_counter -= 1;
+        }
+        document.getElementById('output').innerHTML = "";
+        document.getElementById('copy_tbl').style.display = "none";
+        document.getElementById('big_total').innerHTML = "Totale Volume : ";
+        document.getElementById('chargeable').innerHTML = "Chargeable WT: ";
+    }
+
+    function generateOutput(){
+        var table = "<table border='1' id='tbl_view'>";
+        table += "<tr> <th>Pcs</th> <th>Length</th> <th>Width</th> <th>Height</th> <th>Volume</th> </tr>";
+        tbl = document.getElementById('cubic_table');
+        $('#cubic_table tr').each(function(i, row) {
+          if(i > 0){
+              table += "<tr>";
+              $("input", row).each(function (i, sr) {
+                table += "<td>"+ $(sr).eq(0).val() +"</td>";
+              });
+              table += "<td>" + tbl.rows[i].cells[4].innerHTML + "</td>";
+              table += "</tr>";
+          }
+        });
+        var big_total = (document.getElementById('big_total').innerHTML).split(':')[1];
+        var chargeable = (document.getElementById('chargeable').innerHTML).split(':')[1];
+        table += "<tr><td><b>Total cbm: </b></td> <td>"+ big_total +"</td> <td></td> <td></td> <td></td> </tr>";
+        table += "<tr><td><b>Actual Wt: </b></td> <td>"+ document.getElementById ('kgs').value + " Kgs" + "</td> <td></td> <td></td> <td></td> </tr>";
+        table += "<tr><td><b>Chargeable Wt: </b></td> <td>" + chargeable + "</td> <td></td> <td></td> <td></td> </tr>";
+        table += "</table>";
+        document.getElementById('output').innerHTML = table;
+        document.getElementById('copy_tbl').style.display = "block";
+    }
+
+    function SelectContent() {
+        var doc = document
+            , text = doc.getElementById('tbl_view')
+            , range, selection
+        ;
+        if (doc.body.createTextRange) {
+            range = document.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) {
+            selection = window.getSelection();
+            range = document.createRange();
+            range.selectNodeContents(text);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+        document.execCommand('Copy');
+    }
+
+    var new_counter = 1;
+    $( "#add_tr" ).click(function() {
+        var str = '<tr class="table_' + new_counter + '">';
+        for(var i=0; i<4; i++){
+            str += '<td><input type="text" style= "text-align:center" class="form-control table_'+ new_counter + '" placeholder=""></td>';
+        }
+        str += '<td class="table_' + new_counter + '">0</td></tr>';
+        $('#cubic_table').append(str);
+        new_counter += 1;
+
+        var class_name = ".table_" + (new_counter - 1);
+        $(class_name).change(function(){
+            var elems = $(class_name);
+            elems[5].innerHTML = (elems[1].value * elems[2].value * elems[3].value * elems[4].value / 1000000).toFixed(2);
+        })
+        $("tr").unbind("change", handler);
+        $("tr").bind("change", handler);
+    });
+
+    $( "#remove_tr" ).click(function() {
+        if (new_counter > 1){
+            var class_name = ".table_" + (new_counter - 1);
+            $( class_name ).remove()
+            new_counter -= 1;
+        }
+    });
+
+    $(".table_0").change(function(){
+        var elems = $(".table_0");
+        elems[5].innerHTML = (elems[1].value * elems[2].value * elems[3].value * elems[4].value / 1000000).toFixed(2);
+        console.log('i am the reason ', elems[5].innerHTML);
+    })
+
+    var handler = function(){
+      console.log('I am also called');
+        var big_total = 0;
+        for (var x = 0; x < new_counter; x++){
+            var class_name = ".table_" + (x);
+            var elems = $(class_name);
+            big_total += parseFloat(elems[5].innerHTML);
+        }
+        $('#big_total')[0].innerHTML = 'Total: ' + big_total.toFixed(2) + ' Cbm';
+        var kgs = parseInt(document.getElementById('kgs').value) || 0;
+        chargeable = big_total * 166;
+        if(chargeable < kgs){
+            chargeable = kgs;
+        }
+        $('#chargeable')[0].innerHTML = 'Chargeable: ' + parseInt(chargeable) + " Kgs";
+    }
+    $("tr").bind("change", handler);
+</script>
+{% endblock %}

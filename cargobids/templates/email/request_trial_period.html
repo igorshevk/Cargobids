@@ -1,0 +1,7 @@
+{% extends "email/base_generic.html" %} {% block content %}
+<p>L'Utente {{ name }}, ti ha inviato una richiesta per trial period.</p>
+<p></p>
+<p>
+  <a href="{{ url }}" class="btn">Check Now</a>
+</p>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "email/base_generic.html" %} {% block content %}
+<p>Gentile {{ name }}</p>
+<p>
+  Ti Ringraziamo per la tua richiesta di registrazione a Cargobids! La prima
+  fase della registrazione, prevede una verifica dell'autenticitá del tuo
+  indirizzo email. Clicca sul seguente Link per attivare il tuo account:
+</p>
+<p>
+  <a href="{{ url }}" class="btn">Attiva Ora!</a>
+</p>
+{% endblock %}

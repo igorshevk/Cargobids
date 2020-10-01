@@ -1,0 +1,23 @@
+AIRLINE BID DELETE FUNCTION:
+
+Any airline can enter max 1 open bid per each quote.
+This bid can be improved (only with lower rate offered) any time.
+Airline can delete bid. In this case bid will show in Agent bids list and marked as VOIDED
+in grey color.
+Bid will also appear inairline my bids page shown as VOIDED in grey.
+Airline will be give one and only one more option to bid on that quote (this means he will not 
+have another chance to cancel it again).
+After canceling bid and entering second bid, following must appear:
+- on agent bids list:
+  the new airline bid will appear as OPEN status, (with other airlines bids sorted descending order)
+  the old bid will also appear at bottom of the list showed as VOIDED
+  all voided bids will appear after all the OPEN bids 
+
+
+- on the airline my bids list:
+  the new airline bid will appear as OPEN status, highlighted with color according to ranking
+  the old bid will also appear at bottom of the list showed as VOIDED and highlighted in grey
+  all voided bids will appear after all the OPEN bids 
+
+CHANGE TO BIDS COMPLETED (WOULD YOULIKE TO IMPROVE YOUR BID?):
+Please make as pop up window instead of new page.

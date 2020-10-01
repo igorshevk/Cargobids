@@ -1,0 +1,13 @@
+{% extends "email/base_generic.html" %}
+
+{% block content %}
+   <p>
+        Dear User,
+    </p>
+    <p>
+        {{ message }}
+    </p>
+    <p>
+        <a href='{{ btn_link }}' class="btn">{{btn_label}}</a>
+    </p>
+{% endblock %}

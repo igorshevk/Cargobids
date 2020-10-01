@@ -1,0 +1,19 @@
+{% extends "email/base_generic.html" %}
+
+{% block content %}
+    <p>
+		User {{ name }} has been subscribed to {{data.membership.name}} plan
+		{% if data.interval_count != None %}
+		 for {{data.interval_count}} month{% if data.interval_count != 1 %}s{% endif %} 
+		  .
+		{% endif %}
+
+		{% if exception_note is not None %}
+			<p><strong>Incorrect user company information</strong></p>
+			<p>"{{ exception_note }}"</p>
+		{% endif %}
+    </p>
+    <p>
+    <a href='{{ btn_link }}' class="btn">{{btn_label}}</a>
+    </p>
+{% endblock %}
